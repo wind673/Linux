@@ -1,0 +1,5 @@
+1.linux下解压
+2.进入解压目录，输入 make menuconfig
+3.配置好后，输入 make
+4.编译完成后，输入 make insta
+5.软件会在配置的目录下生成对应的文件夹

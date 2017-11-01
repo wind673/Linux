@@ -1,0 +1,59 @@
+/*************************************************/
+		    第一次烧写：
+/*************************************************/
+/* Console模式 ----------------------------------*/
+fdisk -c 0
+fatformat mmc 0:1
+ext3format mmc 0:2
+ext3format mmc 0:3
+ext3format mmc 0:4
+fastboot
+
+/* fastboot模式 ---------------------------------*/
+fastboot.exe flash  bootloader u-boot-iTOP-4412.bin
+fastboot.exe flash  kernel zImage
+fastboot.exe flash  ramdisk ramdisk-uboot.img
+fastboot.exe flash  system system.img
+
+fastboot -w
+fastboot reboot
+
+/*************************************************/
+		    改变后烧写：
+/*************************************************/
+/* Console模式 ----------------------------------*/
+fastboot
+
+/* fastboot模式 ---------------------------------*/
+fastboot.exe flash  system system.img
+
+fastboot -w
+fastboot reboot
+
+
+
+
+/*************************************************/
+		       编译
+/*************************************************/
+/* 编译文件 -------------------------------------*/
+arm-none-linux-gnueabi-gcc  -o  hello  hello.c  -static
+
+/* 生成.img -------------------------------------*/
+make_ext4fs -s -l 314572800 -a root -L linux system.img system
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

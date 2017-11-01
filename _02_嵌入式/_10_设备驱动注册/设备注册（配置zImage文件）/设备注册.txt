@@ -1,0 +1,25 @@
+1.在内核目录下的arch/arm/mach-exynos/mach-itop4412.c
+增添
+
+#ifdef CONFIG_HELLO_CTL
+struct platform_device s3c_device_hello_ctl = {
+        .name   = "hello_ctl",
+        .id             = -1,
+};
+#endif
+
+#ifdef CONFIG_HELLO_CTL
+	&s3c_device_hello_ctl,
+#endif
+
+
+2.在内核目录下 make menuconfig 找到该设备并激活，生成新的.config文件
+
+3.在内核目录下 make 生成新的的zImage文件
+
+4.在内核目录下的 arch/arm/boot 找到zImage文件
+
+5.烧写zImage文件
+
+6.ls /sys/devices/platform/ 查看内核是否已经存在刚刚添加的设备
+

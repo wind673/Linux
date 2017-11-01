@@ -1,0 +1,4 @@
+
+在给arm编译C文件时的命令：
+arm-none-linux-gnueabi-gcc  -o  hello.o  hello.c  -static
+用arm的编译指令					  静态编译（将库包含进去）

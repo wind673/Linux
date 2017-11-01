@@ -1,0 +1,1 @@
+使用root打开文件管理器（nautilus）。

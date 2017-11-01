@@ -1,0 +1,17 @@
+int fd;
+char buffer_write[] = "Hello Write Function!";
+char buffer_read[1000];
+
+fd = open(testwrite, O_RDWR|O_CREAT,0777);//出错：-1； 其他：fd文件句柄
+
+
+write(fd,buffer_write,strlen(buffer_write));//出错：-1； 其他：实际写入的字节数
+
+
+read(fd,buffer_read,1000);//出错：-1； 其他：实际读出的字节数
+
+
+close(fd);
+
+
+

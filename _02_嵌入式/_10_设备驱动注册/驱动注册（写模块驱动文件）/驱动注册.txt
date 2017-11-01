@@ -1,0 +1,15 @@
+首先配置zImage文件(设备注册)，然后再根据zImage所预留的借口写驱动。
+例如 DRIVER_NAME "hello_ctl",这里的hello_ctl就是设备注册时的.name 
+
+#ifdef CONFIG_HELLO_CTL
+struct platform_device s3c_device_hello_ctl = {
+        .name   = "hello_ctl",
+        .id             = -1,
+};
+#endif
+
+
+注：模块驱动注册，zImage的内核中指定就是M（模块）。
+（我实验的时候的时候貌似不需要，具体不知道原因，日后求解。）
+
+

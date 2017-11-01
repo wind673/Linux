@@ -1,0 +1,8 @@
+linux下大多数应用程序都是字符型设备。通过ioctl输入到字符驱动文件来控制。
+
+写好.c文件后编译.C文件：
+arm-none-linux-gnueabi-gcc  -o  hello  hello.c  -static
+用arm的编译指令					  静态编译（将库包含进去）
+
+最后生成xx文件就是可运行的二进制文件了。
+

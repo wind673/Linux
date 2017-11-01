@@ -1,0 +1,19 @@
+1.busybox 是指令集的工具。编译它生成最小系统的shell指令系统。
+
+2.再往里面添加开发板必要驱动文件eth0-setting passwd profile等等。
+
+3.添加必要的编译器库文件。
+cp /usr/local/arm/arm-2009q3/arm-none-linux-gnueabi/libc/lib/* ./
+
+3.用make_ext4fs工具将其打包成.img镜像文件。
+make_ext4fs -s -l 314572800 -a root -L linux system.img system
+
+4.在fastboot模式下烧写.img文件到开发板并启动。
+
+ 
+
+
+
+
+
+

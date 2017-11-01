@@ -1,0 +1,6 @@
+
+输入如下命令进行查看  	fdisk -l
+挂载U盘  		mount -t vfat /dev/sda1 /udisk
+进入  			cd /udisk
+
+其他: df –h  以标准的单位显示挂载的盘的详情

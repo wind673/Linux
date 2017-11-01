@@ -1,0 +1,31 @@
+1)make menuconifg
+这个与制作最小系统时，配置busybox类似。
+在内核目录下使用指令 make menuconifg 即可进入配置界面。
+
+
+2)Kconfig文件
+每一层都会有一个Kconfig文件，包含有路径配置设置属性等信息。
+例如：drivers/char/Kconfig
+包含了字符设备驱动的配置设置属性
+
+
+3).config文件
+系统源码根目录。配置好系统后会生成一个.config文件。
+该文件内包含了所有的系统配置的实际信息。
+
+
+4)Makefile文件
+设置编译时的一些参数，例如编译器的路径等
+当使用make指令时，就是根据该文件的设置进行编译。
+编译完后在 arch/arm/boot 路径下生成Image zImage 等文件
+
+
+
+
+
+*注：
+这个是在裁剪内核（生成zImage）
+不要与搭建最小linux系统混淆（生成system.img）
+
+
+

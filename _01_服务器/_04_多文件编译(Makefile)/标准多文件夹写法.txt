@@ -1,0 +1,40 @@
+#可执行程序的名字
+EXEC_NAME = test
+
+#文件路径
+PATH_App = ./_01_App
+PATH_Others = ./_02_Others
+PATH_Obj = ./_00_Obj
+
+#中间文件
+OBJECTS = \
+$(PATH_App)/test.o\
+$(PATH_Others)/other.o\
+$(PATH_Others)/other1.o\
+$(PATH_Others)/other2.o\
+
+#编译方式
+cc = gcc
+
+$(EXEC_NAME) : $(OBJECTS)
+	$(cc) -o $(EXEC_NAME) $(OBJECTS)#编译文件
+	-rm -f $(OBJECTS)#删除中间文件
+	./$(EXEC_NAME)#运行可执行文件
+
+.PHONY : clean
+clean :
+	-rm -f $(OBJECTS)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

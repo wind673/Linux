@@ -1,0 +1,18 @@
+OBJECTS = test.o other.o other1.o other2.o 
+cc = gcc 
+
+test : $(OBJECTS)
+	cc -o test $(OBJECTS)
+
+test.o : test.h other.h
+other.o : other.h other1.h other2.h
+other1.o : other1.h
+other2.o : other2.h
+
+
+
+
+.PHONY : clean
+clean :
+	rm -f $(OBJECTS)
+
